@@ -1,0 +1,30 @@
+# OSX
+.DS_Store
+
+# Node / Expo
+node_modules/
+npm-debug.*
+.expo/
+.expo-shared/
+dist/
+web-build/
+
+# Environment
+.env
+.env.local
+
+# Native build outputs
+android/build/
+android/.gradle/
+android/.cxx/
+android/app/build/
+android/app/release/
+android/local.properties
+ios/Pods/
+ios/build/
+ios/*.xcworkspace/xcuserdata/
+*.iml
+
+# Logs
+*.log
+yarn-error.log

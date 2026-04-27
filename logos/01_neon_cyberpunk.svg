@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0a0e27"/>
+      <stop offset="60%" stop-color="#05060f"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="neon1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="50%" stop-color="#7d5fff"/>
+      <stop offset="100%" stop-color="#ff2bd6"/>
+    </linearGradient>
+    <linearGradient id="neon2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff2bd6"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+    </linearGradient>
+    <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b1"/>
+      <feGaussianBlur stdDeviation="28" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0ff" stroke-width="0.4" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <!-- background -->
+  <rect width="1024" height="1024" fill="url(#bg1)"/>
+  <rect width="1024" height="1024" fill="url(#grid)"/>
+
+  <!-- outer ring -->
+  <circle cx="512" cy="512" r="430" fill="none" stroke="url(#neon1)" stroke-width="3" opacity="0.55"/>
+  <circle cx="512" cy="512" r="450" fill="none" stroke="url(#neon2)" stroke-width="1.2" opacity="0.35" stroke-dasharray="6 14"/>
+
+  <!-- circuit traces -->
+  <g stroke="#00f0ff" stroke-width="2" fill="none" opacity="0.6" filter="url(#softglow)">
+    <path d="M 90 512 L 180 512 L 200 492"/>
+    <path d="M 934 512 L 844 512 L 824 532"/>
+    <path d="M 512 90 L 512 180 L 532 200"/>
+    <path d="M 512 934 L 512 844 L 492 824"/>
+    <circle cx="90" cy="512" r="6" fill="#00f0ff"/>
+    <circle cx="934" cy="512" r="6" fill="#ff2bd6"/>
+    <circle cx="512" cy="90" r="6" fill="#7d5fff"/>
+    <circle cx="512" cy="934" r="6" fill="#00f0ff"/>
+  </g>
+
+  <!-- Big neon G with folio cut -->
+  <g filter="url(#glow1)">
+    <!-- G mark, document corner -->
+    <path d="
+      M 512 230
+      a 282 282 0 1 0 199 481
+      L 711 540
+      L 540 540
+      L 540 612
+      L 632 612
+      a 200 200 0 1 1 -42 -226
+      L 640 320
+      a 282 282 0 0 0 -128 -90 z"
+      fill="none" stroke="url(#neon1)" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- folded folio corner -->
+    <path d="M 640 320 L 711 320 L 711 391 Z" fill="url(#neon2)" opacity="0.85"/>
+    <path d="M 640 320 L 711 391" stroke="#fff" stroke-width="3" opacity="0.9"/>
+  </g>
+
+  <!-- highlight stroke without blur -->
+  <g>
+    <path d="
+      M 512 230
+      a 282 282 0 1 0 199 481
+      L 711 540
+      L 540 540
+      L 540 612
+      L 632 612
+      a 200 200 0 1 1 -42 -226
+      L 640 320
+      a 282 282 0 0 0 -128 -90 z"
+      fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+  </g>
+
+  <!-- spark dots -->
+  <g fill="#ffffff">
+    <circle cx="711" cy="320" r="6"/>
+    <circle cx="640" cy="391" r="4"/>
+  </g>
+
+  <!-- wordmark -->
+  <g font-family="Inter, Arial, sans-serif" font-weight="900" text-anchor="middle">
+    <text x="512" y="900" font-size="92" fill="url(#neon1)" letter-spacing="2" filter="url(#softglow)">GoFolio</text>
+    <text x="512" y="900" font-size="92" fill="#ffffff" letter-spacing="2" opacity="0.95">GoFolio</text>
+    <text x="512" y="950" font-size="26" fill="#00f0ff" letter-spacing="14" opacity="0.85">PRO • MAX • LEVEL</text>
+  </g>
+</svg>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#1a1208"/>
+      <stop offset="60%" stop-color="#0a0703"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff3b0"/>
+      <stop offset="20%" stop-color="#ffd76a"/>
+      <stop offset="50%" stop-color="#c98f2a"/>
+      <stop offset="75%" stop-color="#ffd76a"/>
+      <stop offset="100%" stop-color="#7a4d10"/>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7a4d10"/>
+      <stop offset="50%" stop-color="#ffd76a"/>
+      <stop offset="100%" stop-color="#fff3b0"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="35%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="emboss" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feSpecularLighting in="b" surfaceScale="6" specularConstant="1.2" specularExponent="40" lighting-color="#fff7c2" result="spec">
+        <feDistantLight azimuth="135" elevation="55"/>
+      </feSpecularLighting>
+      <feComposite in="spec" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+    <filter id="glowGold" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg2)"/>
+
+  <!-- ornate frame -->
+  <g fill="none" stroke="url(#gold)" stroke-width="2">
+    <rect x="60" y="60" width="904" height="904" rx="24" opacity="0.7"/>
+    <rect x="80" y="80" width="864" height="864" rx="18" opacity="0.4"/>
+  </g>
+  <g fill="url(#gold)" opacity="0.85">
+    <!-- corner ornaments -->
+    <path d="M 60 60 L 130 60 L 60 130 Z"/>
+    <path d="M 964 60 L 894 60 L 964 130 Z"/>
+    <path d="M 60 964 L 130 964 L 60 894 Z"/>
+    <path d="M 964 964 L 894 964 L 964 894 Z"/>
+  </g>
+
+  <!-- monogram circle medallion -->
+  <circle cx="512" cy="470" r="320" fill="none" stroke="url(#gold)" stroke-width="6"/>
+  <circle cx="512" cy="470" r="306" fill="none" stroke="url(#gold2)" stroke-width="1.2" stroke-dasharray="3 8"/>
+  <circle cx="512" cy="470" r="290" fill="#000" opacity="0.6"/>
+
+  <!-- Big gold G -->
+  <g filter="url(#emboss)">
+    <path d="
+      M 512 218
+      a 252 252 0 1 0 178 430
+      L 690 488
+      L 530 488
+      L 530 552
+      L 612 552
+      a 184 184 0 1 1 -36 -204
+      L 622 308
+      a 252 252 0 0 0 -110 -90 z"
+      fill="url(#gold)" stroke="#7a4d10" stroke-width="3"/>
+    <!-- folio corner -->
+    <path d="M 622 308 L 690 308 L 690 376 Z" fill="url(#gold2)" stroke="#7a4d10" stroke-width="2"/>
+    <path d="M 622 308 L 690 376" stroke="#fff7c2" stroke-width="2"/>
+  </g>
+  <!-- shine overlay -->
+  <ellipse cx="450" cy="380" rx="160" ry="60" fill="url(#shine)"/>
+
+  <!-- wordmark -->
+  <g text-anchor="middle" font-family="'Cinzel', 'Trajan Pro', serif" font-weight="700">
+    <text x="512" y="870" font-size="86" fill="url(#gold)" letter-spacing="14">GOFOLIO</text>
+    <text x="512" y="870" font-size="86" fill="none" stroke="#fff7c2" stroke-width="0.6" letter-spacing="14" opacity="0.6">GOFOLIO</text>
+    <line x1="270" y1="900" x2="430" y2="900" stroke="url(#gold)" stroke-width="2"/>
+    <line x1="594" y1="900" x2="754" y2="900" stroke="url(#gold)" stroke-width="2"/>
+    <text x="512" y="940" font-size="22" fill="#ffd76a" letter-spacing="10" font-family="serif" font-style="italic">— LUXE • MAX EDITION —</text>
+  </g>
+</svg>

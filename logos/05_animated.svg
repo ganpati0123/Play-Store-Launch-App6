@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg5" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0e1230"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </radialGradient>
+    <linearGradient id="anim1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff">
+        <animate attributeName="stop-color" values="#00e5ff;#ff2bd6;#7d5fff;#00e5ff" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ff2bd6">
+        <animate attributeName="stop-color" values="#ff2bd6;#7d5fff;#00e5ff;#ff2bd6" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <filter id="g5" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bg5)"/>
+
+  <!-- rotating dashed orbit -->
+  <g transform="translate(512 512)">
+    <circle r="430" fill="none" stroke="url(#anim1)" stroke-width="3" stroke-dasharray="14 22" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="380" fill="none" stroke="#fff" stroke-width="0.6" stroke-dasharray="2 10" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="34s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- pulsing glow -->
+  <g filter="url(#g5)">
+    <path d="
+      M 512 230
+      a 282 282 0 1 0 199 481
+      L 711 540
+      L 540 540
+      L 540 612
+      L 632 612
+      a 200 200 0 1 1 -42 -226
+      L 640 320
+      a 282 282 0 0 0 -128 -90 z"
+      fill="none" stroke="url(#anim1)" stroke-width="22" stroke-linejoin="round" stroke-linecap="round">
+      <animate attributeName="stroke-width" values="18;30;18" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <path d="
+    M 512 230
+    a 282 282 0 1 0 199 481
+    L 711 540
+    L 540 540
+    L 540 612
+    L 632 612
+    a 200 200 0 1 1 -42 -226
+    L 640 320
+    a 282 282 0 0 0 -128 -90 z"
+    fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>
+  <path d="M 640 320 L 711 320 L 711 391 Z" fill="url(#anim1)"/>
+
+  <!-- traveling light particle -->
+  <circle r="8" fill="#fff">
+    <animateMotion dur="4s" repeatCount="indefinite"
+      path="M 512 230 a 282 282 0 1 0 199 481 L 711 540 L 540 540 L 540 612 L 632 612 a 200 200 0 1 1 -42 -226 L 640 320 a 282 282 0 0 0 -128 -90 z"/>
+  </circle>
+
+  <g text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="900">
+    <text x="512" y="900" font-size="98" fill="url(#anim1)" letter-spacing="2">GoFolio</text>
+    <text x="512" y="948" font-size="22" fill="#ffffff" letter-spacing="14" opacity="0.85">
+      ANIMATED • LIVE
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="holo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ff61d2"/>
+      <stop offset="25%"  stop-color="#fd6585"/>
+      <stop offset="50%"  stop-color="#ffd86f"/>
+      <stop offset="75%"  stop-color="#5efce8"/>
+      <stop offset="100%" stop-color="#736efe"/>
+    </linearGradient>
+    <linearGradient id="holo2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#5efce8"/>
+      <stop offset="100%" stop-color="#ff61d2"/>
+    </linearGradient>
+    <filter id="hg">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- transparent bg -->
+  <g filter="url(#hg)">
+    <path d="
+      M 512 180
+      a 312 312 0 1 0 220 532
+      L 732 540
+      L 530 540
+      L 530 622
+      L 644 622
+      a 222 222 0 1 1 -46 -250
+      L 656 270
+      a 312 312 0 0 0 -144 -90 z"
+      fill="url(#holo)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M 656 270 L 732 270 L 732 346 Z" fill="url(#holo2)" stroke="#fff" stroke-width="2"/>
+    <path d="M 656 270 L 732 346" stroke="#fff" stroke-width="3"/>
+  </g>
+</svg>

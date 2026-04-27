@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f7fb"/>
+      <stop offset="100%" stop-color="#e6ebf3"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5b8def"/>
+      <stop offset="50%" stop-color="#7b5cff"/>
+      <stop offset="100%" stop-color="#ff5fa2"/>
+    </linearGradient>
+    <linearGradient id="shadowG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.18"/>
+    </linearGradient>
+    <filter id="soft3" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+
+  <!-- iOS-style rounded square background -->
+  <rect width="1024" height="1024" rx="220" fill="url(#bg3)"/>
+
+  <!-- soft drop shadow under G -->
+  <ellipse cx="540" cy="700" rx="240" ry="32" fill="url(#shadowG)" filter="url(#soft3)"/>
+
+  <!-- main G -->
+  <g>
+    <path d="
+      M 512 200
+      a 290 290 0 1 0 206 495
+      L 718 545
+      L 540 545
+      L 540 615
+      L 632 615
+      a 210 210 0 1 1 -44 -240
+      L 644 290
+      a 290 290 0 0 0 -132 -90 z"
+      fill="url(#grad3)"/>
+    <!-- folio corner -->
+    <path d="M 644 290 L 718 290 L 718 364 Z" fill="#ffffff" opacity="0.95"/>
+    <path d="M 644 290 L 718 364" stroke="url(#grad3)" stroke-width="3" opacity="0.6"/>
+  </g>
+
+  <!-- wordmark -->
+  <g text-anchor="middle" font-family="-apple-system, 'SF Pro Display', Inter, Arial, sans-serif" font-weight="800">
+    <text x="512" y="880" font-size="100" fill="#0b1020" letter-spacing="-2">GoFolio</text>
+    <text x="512" y="930" font-size="22" fill="#5b6473" letter-spacing="6" font-weight="500">Pro · Max · Edition</text>
+  </g>
+</svg>

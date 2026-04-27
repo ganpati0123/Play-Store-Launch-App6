@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#1a0a3e"/>
+      <stop offset="60%" stop-color="#0a0420"/>
+      <stop offset="100%" stop-color="#02000a"/>
+    </radialGradient>
+    <linearGradient id="holo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ff61d2"/>
+      <stop offset="25%"  stop-color="#fd6585"/>
+      <stop offset="50%"  stop-color="#ffd86f"/>
+      <stop offset="75%"  stop-color="#5efce8"/>
+      <stop offset="100%" stop-color="#736efe"/>
+    </linearGradient>
+    <linearGradient id="holo2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#5efce8"/>
+      <stop offset="100%" stop-color="#ff61d2"/>
+    </linearGradient>
+    <filter id="hg">
+      <feGaussianBlur stdDeviation="22" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <!-- subtle rays -->
+  <g opacity="0.18" transform="translate(512 512)">
+    <g><rect x="-700" y="-2" width="1400" height="4" fill="url(#holo)"/></g>
+    <g transform="rotate(45)"><rect x="-700" y="-2" width="1400" height="4" fill="url(#holo)"/></g>
+    <g transform="rotate(90)"><rect x="-700" y="-2" width="1400" height="4" fill="url(#holo)"/></g>
+    <g transform="rotate(135)"><rect x="-700" y="-2" width="1400" height="4" fill="url(#holo)"/></g>
+  </g>
+  <g filter="url(#hg)">
+    <path d="
+      M 512 220
+      a 282 282 0 1 0 199 481
+      L 711 540
+      L 540 540
+      L 540 612
+      L 632 612
+      a 200 200 0 1 1 -42 -226
+      L 640 310
+      a 282 282 0 0 0 -128 -90 z"
+      fill="url(#holo)" stroke="#ffffff" stroke-width="3"/>
+    <path d="M 640 310 L 711 310 L 711 381 Z" fill="url(#holo2)" stroke="#fff" stroke-width="2"/>
+    <path d="M 640 310 L 711 381" stroke="#fff" stroke-width="3"/>
+  </g>
+</svg>

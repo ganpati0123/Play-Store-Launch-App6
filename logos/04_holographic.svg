@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="holo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#ff61d2"/>
+      <stop offset="20%"  stop-color="#fd6585"/>
+      <stop offset="40%"  stop-color="#ffd86f"/>
+      <stop offset="60%"  stop-color="#5efce8"/>
+      <stop offset="80%"  stop-color="#736efe"/>
+      <stop offset="100%" stop-color="#ff61d2"/>
+    </linearGradient>
+    <linearGradient id="holo2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#5efce8"/>
+      <stop offset="50%"  stop-color="#ffd86f"/>
+      <stop offset="100%" stop-color="#ff61d2"/>
+    </linearGradient>
+    <radialGradient id="bgholo" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="100%" stop-color="#000010"/>
+    </radialGradient>
+    <filter id="shimmer" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="hologlow">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#bgholo)"/>
+
+  <!-- prismatic rays -->
+  <g opacity="0.35" transform="translate(512 512)">
+    <g>
+      <rect x="-600" y="-3" width="1200" height="6" fill="url(#holo)"/>
+    </g>
+    <g transform="rotate(45)">
+      <rect x="-600" y="-3" width="1200" height="6" fill="url(#holo)"/>
+    </g>
+    <g transform="rotate(90)">
+      <rect x="-600" y="-3" width="1200" height="6" fill="url(#holo)"/>
+    </g>
+    <g transform="rotate(135)">
+      <rect x="-600" y="-3" width="1200" height="6" fill="url(#holo)"/>
+    </g>
+  </g>
+
+  <!-- chromatic aberration backdrop G -->
+  <g filter="url(#shimmer)">
+    <path transform="translate(-10 -10)" d="
+      M 512 220
+      a 282 282 0 1 0 199 481
+      L 711 540
+      L 540 540
+      L 540 612
+      L 632 612
+      a 200 200 0 1 1 -42 -226
+      L 640 310
+      a 282 282 0 0 0 -128 -90 z"
+      fill="#ff61d2" opacity="0.6"/>
+    <path transform="translate(10 10)" d="
+      M 512 220
+      a 282 282 0 1 0 199 481
+      L 711 540
+      L 540 540
+      L 540 612
+      L 632 612
+      a 200 200 0 1 1 -42 -226
+      L 640 310
+      a 282 282 0 0 0 -128 -90 z"
+      fill="#5efce8" opacity="0.6"/>
+  </g>
+
+  <!-- main holographic G -->
+  <g filter="url(#hologlow)">
+    <path d="
+      M 512 220
+      a 282 282 0 1 0 199 481
+      L 711 540
+      L 540 540
+      L 540 612
+      L 632 612
+      a 200 200 0 1 1 -42 -226
+      L 640 310
+      a 282 282 0 0 0 -128 -90 z"
+      fill="url(#holo)" stroke="#ffffff" stroke-width="2"/>
+    <path d="M 640 310 L 711 310 L 711 381 Z" fill="url(#holo2)" stroke="#fff" stroke-width="2"/>
+    <path d="M 640 310 L 711 381" stroke="#fff" stroke-width="3"/>
+  </g>
+
+  <!-- sparkle stars -->
+  <g fill="#ffffff">
+    <g transform="translate(220 240)"><path d="M0,-18 L4,-4 L18,0 L4,4 L0,18 L-4,4 L-18,0 L-4,-4 Z"/></g>
+    <g transform="translate(820 320)"><path d="M0,-12 L3,-3 L12,0 L3,3 L0,12 L-3,3 L-12,0 L-3,-3 Z"/></g>
+    <g transform="translate(780 760)"><path d="M0,-22 L5,-5 L22,0 L5,5 L0,22 L-5,5 L-22,0 L-5,-5 Z"/></g>
+    <g transform="translate(180 700)"><path d="M0,-14 L4,-4 L14,0 L4,4 L0,14 L-4,4 L-14,0 L-4,-4 Z"/></g>
+  </g>
+
+  <g text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="900">
+    <text x="512" y="900" font-size="98" fill="url(#holo)" letter-spacing="2">GoFolio</text>
+    <text x="512" y="950" font-size="22" fill="#ffffff" letter-spacing="12" opacity="0.85">HOLOGRAPHIC • ULTRA</text>
+  </g>
+</svg>
